@@ -1,26 +1,46 @@
 package main;
 
+import java.util.Arrays;
+
 public class Search {
 	String searchMethod;
-	GameBoard gameBoard;
-	
-	Search(GameBoard gameBoard, String searchMethod){
+	static String[][] solution = new String[3][6];
+
+	Search(String searchMethod){
 		this.searchMethod = searchMethod;
-		this.gameBoard = gameBoard;
 	}
+	
+	
 	
 	//breadth first search
 	void breadthFirst(){
-		//esimene j‰‰b esimeseks
 		
-		//proovib teise panna esimesega sobituma
-			//kui ei sobi, vahetab j‰gmisega
-				//kui ei sobi, vahetab j‰gmisega, rekursiivselt
-		//proovib teise kolmandaga sobituma panna
-			//kui ei sobi, vahetab j‰gmisega
-				//kui ei sobi, vahetab j‰gmisega, rekursiivselt
-				
+		
+		solution[0] = GameBoard.getGameBoard()[0];
+		System.out.println(Arrays.deepToString(solution));
+		System.out.println(Arrays.toString(GameBoard.getGameBoard()[0]));
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//Depth first search
 	void depthFirst(){
 		
@@ -30,4 +50,10 @@ public class Search {
 		
 	}
 
+	public void setSolutionTile(int tile, String[] solution) {
+		Search.solution[tile] = solution;
+	}
+	public String[][] getSolution() {
+		return Search.solution;
+	}
 }
